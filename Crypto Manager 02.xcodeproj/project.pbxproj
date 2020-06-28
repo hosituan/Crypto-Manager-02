@@ -14,6 +14,7 @@
 		FB92019E24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB92019C24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld */; };
 		FB9201A024A8BDE100B26284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB92019F24A8BDE100B26284 /* Assets.xcassets */; };
 		FB9201A324A8BDE100B26284 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9201A124A8BDE100B26284 /* LaunchScreen.storyboard */; };
+		FB9201B024A8FA2700B26284 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201AF24A8FA2700B26284 /* Crypto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB92019F24A8BDE100B26284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB9201A224A8BDE100B26284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB9201A424A8BDE100B26284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB9201AF24A8FA2700B26284 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,57 @@
 		FB92019224A8BDE000B26284 /* Crypto Manager 02 */ = {
 			isa = PBXGroup;
 			children = (
-				FB92019324A8BDE000B26284 /* AppDelegate.swift */,
-				FB92019524A8BDE000B26284 /* SceneDelegate.swift */,
-				FB92019724A8BDE000B26284 /* ViewController.swift */,
-				FB92019924A8BDE000B26284 /* Main.storyboard */,
-				FB92019F24A8BDE100B26284 /* Assets.xcassets */,
-				FB9201A124A8BDE100B26284 /* LaunchScreen.storyboard */,
-				FB9201A424A8BDE100B26284 /* Info.plist */,
-				FB92019C24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld */,
+				FB9201AE24A8BE6A00B26284 /* Resources */,
+				FB9201AD24A8BE5B00B26284 /* App Delegate */,
+				FB9201AC24A8BE4A00B26284 /* Controller */,
+				FB9201AB24A8BE3E00B26284 /* Model */,
+				FB9201AA24A8BE3900B26284 /* View */,
 			);
 			path = "Crypto Manager 02";
+			sourceTree = "<group>";
+		};
+		FB9201AA24A8BE3900B26284 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB92019924A8BDE000B26284 /* Main.storyboard */,
+				FB9201A124A8BDE100B26284 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB9201AB24A8BE3E00B26284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB92019C24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld */,
+				FB9201AF24A8FA2700B26284 /* Crypto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB9201AC24A8BE4A00B26284 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB92019724A8BDE000B26284 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB9201AD24A8BE5B00B26284 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FB9201A424A8BDE100B26284 /* Info.plist */,
+				FB92019524A8BDE000B26284 /* SceneDelegate.swift */,
+				FB92019324A8BDE000B26284 /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		FB9201AE24A8BE6A00B26284 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB92019F24A8BDE100B26284 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9201B024A8FA2700B26284 /* Crypto.swift in Sources */,
 				FB92019824A8BDE000B26284 /* ViewController.swift in Sources */,
 				FB92019424A8BDE000B26284 /* AppDelegate.swift in Sources */,
 				FB92019E24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld in Sources */,
@@ -289,7 +333,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Crypto Manager 02/Info.plist";
+				INFOPLIST_FILE = "Crypto Manager 02/App Delegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +351,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Crypto Manager 02/Info.plist";
+				INFOPLIST_FILE = "Crypto Manager 02/App Delegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
