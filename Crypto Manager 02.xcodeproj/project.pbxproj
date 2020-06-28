@@ -15,6 +15,8 @@
 		FB9201A024A8BDE100B26284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB92019F24A8BDE100B26284 /* Assets.xcassets */; };
 		FB9201A324A8BDE100B26284 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9201A124A8BDE100B26284 /* LaunchScreen.storyboard */; };
 		FB9201B024A8FA2700B26284 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201AF24A8FA2700B26284 /* Crypto.swift */; };
+		FB9201D724A915E400B26284 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */; };
+		FB9201D924A918E900B26284 /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201D824A918E900B26284 /* CryptoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FB9201A224A8BDE100B26284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB9201A424A8BDE100B26284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9201AF24A8FA2700B26284 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
+		FB9201D824A918E900B26284 /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				FB92019724A8BDE000B26284 /* ViewController.swift */,
+				FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */,
+				FB9201D824A918E900B26284 /* CryptoListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,8 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9201D924A918E900B26284 /* CryptoListViewController.swift in Sources */,
 				FB9201B024A8FA2700B26284 /* Crypto.swift in Sources */,
 				FB92019824A8BDE000B26284 /* ViewController.swift in Sources */,
+				FB9201D724A915E400B26284 /* CryptoTableViewCell.swift in Sources */,
 				FB92019424A8BDE000B26284 /* AppDelegate.swift in Sources */,
 				FB92019E24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld in Sources */,
 				FB92019624A8BDE000B26284 /* SceneDelegate.swift in Sources */,

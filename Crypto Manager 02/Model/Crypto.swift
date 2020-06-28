@@ -12,11 +12,15 @@ public struct Crypto : Codable {
         let id: Int
         let name: String
         let symbol: String
+        let cmc_rank: Int
         let slug: String
         struct quote : Codable {
             struct USD : Codable {
                 let price: Double
                 let volume_24h: Double
+                let percent_change_1h: Double
+                let percent_change_24h: Double
+                let percent_change_7d: Double
             }
             let USD: USD
         }

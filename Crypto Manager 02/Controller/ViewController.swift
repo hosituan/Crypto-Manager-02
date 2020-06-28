@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     //var resspone
     override func viewDidLoad() {
         super.viewDidLoad()
-        update()
+        //update()
         //Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
     }
     @objc func update() {
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                                 let test = response.data[0].quote.USD.price
                                         DispatchQueue.main.async {
                                     
-                                self.priceLabel.text = "\(test)"
+                                //self.priceLabel.text = "\(test)"
                                 }
                             } catch { print(error) }
                             }
