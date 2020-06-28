@@ -24,9 +24,9 @@ class CryptoListViewController: UIViewController, UITableViewDelegate, UITableVi
     var cryptos: Crypto? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        update( {
+        update {
             print(self.cryptos!.data[0].name )
-        })
+        }
         tableView.delegate = self
         tableView.dataSource = self
      // Do any additional setup after loading the view.
