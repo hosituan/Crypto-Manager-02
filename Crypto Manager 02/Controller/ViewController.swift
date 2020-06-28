@@ -11,34 +11,37 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var priceLabel: UILabel!
+    var crypto: Crypto?
+    //var resspone
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //var url : String = "https://api.coinmarketcap.com/api/v1/cryptocurrency/price-performance-stats/latest"
-        //let session = URLSession.shared
-        
-
-        if let url = URL(string: "https://blockchain.info/ticker") {
-            var request = URLRequest(url: url)
-            //request.addValue("305782b4-707c-43b8-8c33-1835adfe147a", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
-            request.httpMethod = "GET"
-            let dataTask = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-                print(data!)
-                do {
-                    //let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
-                    do {
-                       // data we are getting from network request
-                        let decoder = JSONDecoder()
-                        let response = try decoder.decode(Cryptos.self, from: data!)
-                        print(response.USD.m15) //Output - EMT
-                    } catch { print(error) }
-                    }
+        update()
+        //Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+    @objc func update() {
+        if let url = URL(string:"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest") {
+                    var request = URLRequest(url: url)
+                    request.addValue("305782b4-707c-43b8-8c33-1835adfe147a", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+                    request.httpMethod = "GET"
+                    let dataTask = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+                        do {
+                            do {
+                                let response = try JSONDecoder().decode(Crypto.self, from: data!)
+                                //print(response)
+                                let test = response.data[0].quote.USD.price
+                                        DispatchQueue.main.async {
+                                    
+                                self.priceLabel.text = "\(test)"
+                                }
+                            } catch { print(error) }
+                            }
+                        }
+        //                print(error!)
+                        //handle response here
+                    dataTask.resume()
                 }
-//                print(error!)
-                //handle response here
-            dataTask.resume()
-        }
-        // Do any additional setup after loading the view.
+
+            
     }
 
 

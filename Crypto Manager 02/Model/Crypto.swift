@@ -7,21 +7,21 @@
 //
 
 import Foundation
-public struct Cryptos : Codable {
-       struct USDs : Codable {
-            let m15: Double
-            let last: Double
-            let buy: Double
-            let sell: Double
-            let symbol: String
-        private enum CodingKeys : String, CodingKey {
-            case m15 = "15m"
-            case last
-            case buy
-            case sell
-            case symbol
-           }
+public struct Crypto : Codable {
+       struct data : Codable {
+        let id: Int
+        let name: String
+        let symbol: String
+        let slug: String
+        struct quote : Codable {
+            struct USD : Codable {
+                let price: Double
+                let volume_24h: Double
+            }
+            let USD: USD
+        }
+        let quote: quote
        }
-   let USD: USDs
+    let data: [data]
 }
 
