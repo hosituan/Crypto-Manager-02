@@ -10,44 +10,85 @@ import UIKit
 
 class CryptoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 100
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! CryptoTableViewCell
-        cell.nameCrypto.text = self.cryptos?.data[0].name
+        cell.nameCrypto.text = self.cryptos?.data[indexPath.row].name
+        let price = self.cryptos?.data[indexPath.row].quote.USD.price
+        let p_1h = self.cryptos?.data[indexPath.row].quote.USD.percent_change_1h
+        let p_24h = self.cryptos?.data[indexPath.row].quote.USD.percent_change_24h
+        let p_7day = self.cryptos?.data[indexPath.row].quote.USD.percent_change_7d
+        if p_1h ?? 0 > 0.0 {
+            cell.percent_1h.textColor = .green
+        }
+        if p_24h ?? 0 > 0.0 {
+                 cell.percent_24h.textColor = .green
+             }
+        if p_7day ?? 0 > 0.0 {
+                 cell.percent_7day.textColor = .green
+             }
+        
+        cell.priceCrypto.text = "$\(round( (price ?? 0) * 100) / 100)"
+        cell.percent_1h.text = "1h:\(round((p_1h ?? 0) * 100) / 100 )%"
+        cell.percent_24h.text = "24h:\(round((p_24h ?? 0) * 100) / 100 )%"
+        cell.percent_7day.text = "7days:\(round((p_7day ?? 0) * 100) / 100 )%"
         return cell
     }
     
 
     @IBOutlet var tableView: UITableView!
-    var cryptos: Crypto? = nil
+    var cryptos: Crypto?
     override func viewDidLoad() {
         super.viewDidLoad()
-        update {
-            print(self.cryptos!.data[0].name )
+        self.update() { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let cryptos):
+                self.cryptos = cryptos
+                self.tableView.reloadData()
+            }
         }
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.reloadData()
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: {_ in
+            self.update() { result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let cryptos):
+                    self.cryptos = cryptos
+                    self.tableView.reloadData()
+                }
+            }
+        })
      // Do any additional setup after loading the view.
     }
-    @objc func update(completion: @escaping () -> Void) {
+    func update(completion: @escaping (Result<Crypto, Error>) -> Void) {
         if let url = URL(string:"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest") {
                     var request = URLRequest(url: url)
                     request.addValue("305782b4-707c-43b8-8c33-1835adfe147a", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
                     request.httpMethod = "GET"
                     let dataTask = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-                        do {
-                            do {
-                                let response = try JSONDecoder().decode(Crypto.self, from: data!)
-                                self.cryptos = response
-                                completion()
-                                //print(self.cryptos!.data[0].name)
-                            } catch { print(error)
-                                completion()
-                            }
-                            }
+                        guard let responseData = data, error == nil else {
+                            DispatchQueue.main.async { completion(.failure(error ?? NetworkError.unknownError(data, response))) }
+                            return
                         }
+
+                        do {
+                            let response = try JSONDecoder().decode(Crypto.self, from: responseData)
+                            DispatchQueue.main.async { completion(.success(response)) }
+                        } catch {
+                            DispatchQueue.main.async { completion(.failure(error)) }
+                        }
+                        enum NetworkError: Error {
+                            case unknownError(Data?, URLResponse?)
+                        }
+                    }
                     dataTask.resume()
             }
     }

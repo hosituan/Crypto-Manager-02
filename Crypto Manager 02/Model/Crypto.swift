@@ -7,7 +7,10 @@
 //
 
 import Foundation
-public struct Crypto : Codable {
+//public struct ResponseObject<T: Codable>: Codable {
+//    let data: [T]
+//}
+struct Crypto : Codable {
        struct data : Codable {
         let id: Int
         let name: String
