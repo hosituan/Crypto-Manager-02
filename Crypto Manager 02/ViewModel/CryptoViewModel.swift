@@ -30,10 +30,10 @@ class CryptoViewModel: NSObject {
                  }
                 else {
                     var cryptoArray: Array<data> = []
-                    for index in stride(from: self.requestResult.value.count - 1, to: 0, by: -1)
+                    for index in stride(from: self.requestResult.value.count - 1, to: -1, by: -1)
                     {
                         if self.requestResult.value[index].name.lowercased().contains("\(text!.lowercased())") {
-                            cryptoArray.append(self.requestResult.value[index])
+                            cryptoArray.insert(self.requestResult.value[index], at: 0)
                         }
                     }
                     self.searchResult.accept(cryptoArray)
