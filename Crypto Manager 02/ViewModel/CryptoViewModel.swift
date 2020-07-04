@@ -26,18 +26,17 @@ class CryptoViewModel: NSObject {
             self.searchInput.asObservable().subscribe(onNext: { (text) in
                  if text!.isEmpty || text!.contains(" "){
                     print("nothing")
-                    self.searchResult = self.requestResult
+                    self.searchResult.accept(self.requestResult.value)
                  }
                 else {
-                    print(self.requestResult.value)
-                    var cryptoArray: Array<data> = self.requestResult.value
-                    for index in stride(from: cryptoArray.count - 1, to: 0, by: -1)
+                    var cryptoArray: Array<data> = []
+                    for index in stride(from: self.requestResult.value.count - 1, to: 0, by: -1)
                     {
-                        if !cryptoArray[index].name.contains("\(text!)") {
-                            cryptoArray.remove(at: index)
+                        if self.requestResult.value[index].name.lowercased().contains("\(text!.lowercased())") {
+                            cryptoArray.append(self.requestResult.value[index])
+                        }
                     }
                     self.searchResult.accept(cryptoArray)
-                    }
                 }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: dispose)
     }
@@ -51,6 +50,7 @@ class CryptoViewModel: NSObject {
                 do {
                     let response = try JSONDecoder().decode(CryptoModel.self, from: data!)
                     self.requestResult.accept(response.data)
+                    self.searchResult.accept(response.data)
                 }
                 catch {
                 }
