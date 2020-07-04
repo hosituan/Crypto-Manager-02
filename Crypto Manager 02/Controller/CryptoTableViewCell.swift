@@ -27,5 +27,12 @@ class CryptoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func configure(name: String, price: String, percent_1h: String, percent_24h: String, percent_7day: String){
+        self.nameCrypto.text = name
+        self.priceCrypto.text = price
+        self.percent_1h.text = percent_1h
+        self.percent_24h.text = percent_24h
+        self.percent_7day.text = percent_7day
+    }
 
 }
