@@ -18,7 +18,6 @@
 		FB9201A324A8BDE100B26284 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9201A124A8BDE100B26284 /* LaunchScreen.storyboard */; };
 		FB9201B024A8FA2700B26284 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201AF24A8FA2700B26284 /* CryptoModel.swift */; };
 		FB9201D724A915E400B26284 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */; };
-		FB9201D924A918E900B26284 /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201D824A918E900B26284 /* CryptoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		FB9201A424A8BDE100B26284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9201AF24A8FA2700B26284 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
-		FB9201D824A918E900B26284 /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */,
-				FB9201D824A918E900B26284 /* CryptoListViewController.swift */,
 				FB57D72D24AFE107006BFEE7 /* AllCryptoViewController.swift */,
 			);
 			path = Controller;
@@ -269,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB9201D924A918E900B26284 /* CryptoListViewController.swift in Sources */,
 				FB57D72E24AFE107006BFEE7 /* AllCryptoViewController.swift in Sources */,
 				FB9201B024A8FA2700B26284 /* CryptoModel.swift in Sources */,
 				FB9201D724A915E400B26284 /* CryptoTableViewCell.swift in Sources */,

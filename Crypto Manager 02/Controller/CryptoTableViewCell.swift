@@ -27,12 +27,26 @@ class CryptoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure(name: String, price: String, percent_1h: String, percent_24h: String, percent_7day: String){
+    func configure(name: String, price: Double, percent_1h: Double, percent_24h: Double, percent_7day: Double){
+        
+        if percent_1h > 0.0 {
+            self.percent_1h.textColor = .green
+            }
+        else { self.percent_1h.textColor = .red}
+        
+        if percent_24h > 0.0 {
+            self.percent_24h.textColor = .green
+        }else { self.percent_24h.textColor = .red}
+        
+        if percent_7day > 0.0 {
+            self.percent_7day.textColor = .green
+        } else { self.percent_7day.textColor = .red}
+            
         self.nameCrypto.text = name
-        self.priceCrypto.text = price
-        self.percent_1h.text = percent_1h
-        self.percent_24h.text = percent_24h
-        self.percent_7day.text = percent_7day
+        self.priceCrypto.text = "$\(round( (price ) * 100) / 100)"
+        self.percent_1h.text = "1h: \(round((percent_1h ) * 100) / 100 )%"
+        self.percent_24h.text = "24h: \(round((percent_24h ) * 100) / 100 )%"
+        self.percent_7day.text = "7days: \(round((percent_7day ) * 100) / 100 )%"
     }
 
 }

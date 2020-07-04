@@ -26,7 +26,7 @@ class AllCryptoViewController: UIViewController {
     func bindUI(){
         self.searchTextFeild.rx.text.throttle(1, scheduler: MainScheduler.instance).asObservable().bind(to: self.cryptoViewModel.searchInput).disposed(by: dispose)
         self.cryptoViewModel.searchResult.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "cellID", cellType: CryptoTableViewCell.self)) {
-            (index, data, cell) in cell.configure(name: data.name, price: String(data.quote.USD.price), percent_1h: String(data.quote.USD.percent_change_1h), percent_24h: String(data.quote.USD.percent_change_24h) , percent_7day: "")
+            (index, data, cell) in cell.configure(name: data.name, price: data.quote.USD.price, percent_1h: data.quote.USD.percent_change_1h, percent_24h: data.quote.USD.percent_change_24h , percent_7day: data.quote.USD.percent_change_24h)
         }.disposed(by: dispose)
     }
 }
