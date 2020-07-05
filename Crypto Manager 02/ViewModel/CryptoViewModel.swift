@@ -25,7 +25,6 @@ class CryptoViewModel: NSObject {
     func bindingData() {
             self.searchInput.asObservable().subscribe(onNext: { (text) in
                  if text!.isEmpty || text!.contains(" "){
-                    print("nothing")
                     self.searchResult.accept(self.requestResult.value)
                  }
                 else {

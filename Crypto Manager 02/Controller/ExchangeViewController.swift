@@ -15,7 +15,9 @@ class ExchangeViewController: UIViewController {
     var cryptoViewModel = CryptoViewModel()
     var cryptoViewModelTo = CryptoViewModel()
     var dispose = DisposeBag()
-
+    
+    var selectedFrom:data?
+    var selectedTo:data?
     @IBOutlet var exchangeFrom: UITextField!
     @IBOutlet var exchangeTo: UITextField!
     
@@ -26,12 +28,18 @@ class ExchangeViewController: UIViewController {
     @IBOutlet var valueTo: UITextField!
     @IBOutlet var valueFrom: UITextField!
     
-    var indexPathFrom = 0
-    var indexPathTo = 0
     
     @IBAction func exchangeButton(_ sender: UIButton) {
-        let priceFrom = self.cryptoViewModel.searchResult.value[indexPathFrom].quote.USD.price
-        let priceTo = self.cryptoViewModelTo.searchResult.value[indexPathTo].quote.USD.price
+        guard selectedFrom == nil else {
+            print("nil1")
+            return
+        }
+        guard selectedTo == nil else {
+            print("nil2")
+            return
+        }
+        let priceFrom = self.selectedFrom!.quote.USD.price
+        let priceTo = self.selectedTo!.quote.USD.price
         if !valueFrom.text!.isEmpty {
             guard
             let valueFrom = Double(self.valueFrom.text!)
@@ -58,14 +66,16 @@ class ExchangeViewController: UIViewController {
         self.tableViewTo.isHidden = true
         self.tableViewFrom.delegate = self
         self.tableViewTo.delegate = self
+        bindUI()
         configure()
         exchangeFrom.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         exchangeTo.addTarget(self, action: #selector(self.textFieldDidChange1(_:)), for: .editingChanged)
-        bindUI()
+
     }
     func configure() {
         self.exchangeBtn.layer.cornerRadius = 10
-        
+        self.exchangeFrom.placeholder = self.selectedFrom?.name
+
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -100,14 +110,14 @@ class ExchangeViewController: UIViewController {
 extension ExchangeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == tableViewFrom{
-            self.indexPathFrom = indexPath.row
+            self.selectedFrom = self.cryptoViewModel.searchResult.value[indexPath.row]
             let selectedItem = self.cryptoViewModel.searchResult.value[indexPath.row].name
             self.exchangeFrom.text = selectedItem
             self.tableViewFrom.isHidden = true
             self.tableViewTo.isHidden = true
             self.exchangeTo.becomeFirstResponder()
         } else if tableView == tableViewTo {
-            self.indexPathTo = indexPath.row
+            self.selectedTo = self.cryptoViewModel.searchResult.value[indexPath.row]
             let selectedItem = self.cryptoViewModelTo.searchResult.value[indexPath.row].name
             self.exchangeTo.text = selectedItem
             self.tableViewFrom.isHidden = true

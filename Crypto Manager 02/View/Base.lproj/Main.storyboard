@@ -164,8 +164,7 @@
                     <navigationItem key="navigationItem" title="Title" id="pnG-iD-Ooc">
                         <barButtonItem key="rightBarButtonItem" title="Exchange" id="41c-rY-w6S">
                             <connections>
-                                <action selector="exchangeButton:" destination="nUv-9n-d9F" id="3Ig-31-Yd7"/>
-                                <segue destination="do3-cx-gVz" kind="show" id="qPm-Hi-HmB"/>
+                                <segue destination="do3-cx-gVz" kind="showDetail" identifier="exchangeSegue" id="qPm-Hi-HmB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,11 +178,11 @@
             <objects>
                 <viewController storyboardIdentifier="exchangeViewController" id="do3-cx-gVz" customClass="ExchangeViewController" customModule="Crypto_Manager_02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5PB-N9-asg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(value)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Akg-ed-ZD6">
-                                <rect key="frame" x="20" y="179" width="140" height="34"/>
+                                <rect key="frame" x="20" y="91" width="140" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Sce-Je-TbL"/>
                                     <constraint firstAttribute="height" constant="34" id="vE9-AV-8Jc"/>
@@ -192,7 +191,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(value)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-Rp-MUj">
-                                <rect key="frame" x="254" y="179" width="140" height="34"/>
+                                <rect key="frame" x="254" y="91" width="140" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9DH-wt-8M8"/>
                                     <constraint firstAttribute="width" constant="140" id="tVf-4K-ezU"/>
@@ -201,7 +200,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitcoin" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-Bp-TJl">
-                                <rect key="frame" x="20" y="125" width="134" height="34"/>
+                                <rect key="frame" x="20" y="37" width="134" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="2UM-EY-9LT"/>
                                     <constraint firstAttribute="height" constant="34" id="lxy-cB-YlH"/>
@@ -210,7 +209,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Etherum" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PUM-8K-MGG">
-                                <rect key="frame" x="254" y="125" width="140" height="34"/>
+                                <rect key="frame" x="254" y="37" width="140" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="P4Q-Pb-0fa"/>
                                     <constraint firstAttribute="height" constant="34" id="Vcs-WH-Ygn"/>
@@ -219,7 +218,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-jd-H5c">
-                                <rect key="frame" x="153" y="255" width="108" height="46"/>
+                                <rect key="frame" x="153" y="167" width="108" height="46"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="BGW-jK-pqd"/>
@@ -232,7 +231,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yZK-aM-oF0">
-                                <rect key="frame" x="20" y="179" width="140" height="221"/>
+                                <rect key="frame" x="20" y="91" width="140" height="221"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="221" id="IfK-7L-e6T"/>
@@ -262,7 +261,7 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WSM-go-h6E">
-                                <rect key="frame" x="254" y="179" width="140" height="221"/>
+                                <rect key="frame" x="254" y="91" width="140" height="221"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="TAU-UA-sgO"/>
@@ -292,14 +291,14 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ex" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-Ha-7Of">
-                                <rect key="frame" x="191" y="128" width="32" height="31"/>
+                                <rect key="frame" x="191" y="40" width="32" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Hy3-Om-eVH"/>
                                     <constraint firstAttribute="width" constant="32" id="myN-Tn-cLP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-BJ-dV5">
-                                <rect key="frame" x="20" y="103" width="44" height="21"/>
+                                <rect key="frame" x="20" y="15" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6ts-Wi-bzs"/>
                                     <constraint firstAttribute="width" constant="44" id="P4m-1O-faK"/>
@@ -309,7 +308,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-Ws-d5h">
-                                <rect key="frame" x="254" y="103" width="24" height="21"/>
+                                <rect key="frame" x="254" y="15" width="24" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Fky-eN-4cR"/>
                                     <constraint firstAttribute="width" constant="24" id="M31-OY-noD"/>

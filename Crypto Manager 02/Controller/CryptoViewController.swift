@@ -15,9 +15,6 @@ class CryptoViewController: UIViewController {
     
     var crypto:data?
     
-    @IBAction func exchangeButton(_ sender: UIBarButtonItem) {
-        print("abc")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -29,6 +26,14 @@ class CryptoViewController: UIViewController {
         }
         else {
             print("nil")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "exchangeSegue") {
+            let vc = segue.destination as! ExchangeViewController
+            
+            print(crypto!.name)
+            vc.selectedFrom = crypto
         }
     }
 

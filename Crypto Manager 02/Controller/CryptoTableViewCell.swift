@@ -48,5 +48,6 @@ class CryptoTableViewCell: UITableViewCell {
         self.percent_24h.text = "24h: \(round((percent_24h ) * 100) / 100 )%"
         self.percent_7day.text = "7days: \(round((percent_7day ) * 100) / 100 )%"
     }
+    
 
 }
