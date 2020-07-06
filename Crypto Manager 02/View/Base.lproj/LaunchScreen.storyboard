@@ -16,15 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="XHl-Xd-ezU">
-                                <rect key="frame" x="-49" y="244" width="512" height="418"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-xc-k7h">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XHl-Xd-ezU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="0W1-bs-Zok"/>
-                            <constraint firstItem="XHl-Xd-ezU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Zou-iC-B07"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XHl-Xd-ezU" secondAttribute="bottom" constant="200" id="hI8-Zo-fHy"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3oi-xc-k7h" secondAttribute="bottom" constant="-34" id="85v-x7-WON"/>
+                            <constraint firstItem="3oi-xc-k7h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Btv-LT-Dqd"/>
+                            <constraint firstItem="3oi-xc-k7h" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hkp-nC-pg0"/>
+                            <constraint firstItem="3oi-xc-k7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tBv-WT-LUd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="512" height="512"/>
+        <image name="Launch" width="420" height="408"/>
     </resources>
 </document>

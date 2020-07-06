@@ -255,7 +255,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="xp0-7L-SHL" id="dJg-Zw-Nya"/>
+                                            <outlet property="nameLabel" destination="xp0-7L-SHL" id="fOc-7P-yan"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -285,7 +285,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameToLabel" destination="KhS-1l-gRh" id="DOq-27-SXr"/>
+                                            <outlet property="nameToLabel" destination="KhS-1l-gRh" id="fY4-Jf-417"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -319,6 +319,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gGB-Ha-7Of" firstAttribute="top" secondItem="peN-7E-12O" secondAttribute="top" constant="40" id="1Vg-SS-O6d"/>
                             <constraint firstItem="qkj-Bp-TJl" firstAttribute="leading" secondItem="peN-7E-12O" secondAttribute="leading" constant="20" id="2HM-Gc-Rze"/>
@@ -342,6 +343,9 @@
                             <constraint firstItem="8KV-jd-H5c" firstAttribute="top" secondItem="Akg-ed-ZD6" secondAttribute="bottom" constant="42" id="sly-r9-FNx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="peN-7E-12O"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2na-Ay-wUQ" appends="YES" id="mG4-T4-Mc4"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Exchange" id="vC4-TF-lfP"/>
                     <connections>
@@ -355,6 +359,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zas-iA-Ma0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2na-Ay-wUQ"/>
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="875.89285714285711"/>
         </scene>

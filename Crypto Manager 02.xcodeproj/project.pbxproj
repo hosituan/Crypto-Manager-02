@@ -20,7 +20,7 @@
 		FB9201B024A8FA2700B26284 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201AF24A8FA2700B26284 /* CryptoModel.swift */; };
 		FB9201D724A915E400B26284 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */; };
 		FBADE0F724B10C93000AC326 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADE0F624B10C93000AC326 /* ExchangeViewController.swift */; };
-		FBADE0FB24B1B5D3000AC326 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADE0FA24B1B5D3000AC326 /* ExchangeTableViewCell.swift */; };
+		FBADE14324B33EB0000AC326 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADE14224B33EB0000AC326 /* ExchangeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		FB9201AF24A8FA2700B26284 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
 		FBADE0F624B10C93000AC326 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
-		FBADE0FA24B1B5D3000AC326 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeTableViewCell.swift; path = ../../../../.Trash/ExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		FBADE14224B33EB0000AC326 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +134,9 @@
 			children = (
 				FB9201D624A915E400B26284 /* CryptoTableViewCell.swift */,
 				FB57D72D24AFE107006BFEE7 /* AllCryptoViewController.swift */,
-				FBADE0FA24B1B5D3000AC326 /* ExchangeTableViewCell.swift */,
 				FB57D72F24B0F612006BFEE7 /* CryptoViewController.swift */,
 				FBADE0F624B10C93000AC326 /* ExchangeViewController.swift */,
+				FBADE14224B33EB0000AC326 /* ExchangeTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				FB92019424A8BDE000B26284 /* AppDelegate.swift in Sources */,
 				FB57D73024B0F612006BFEE7 /* CryptoViewController.swift in Sources */,
 				FB92019E24A8BDE000B26284 /* Crypto_Manager_02.xcdatamodeld in Sources */,
-				FBADE0FB24B1B5D3000AC326 /* ExchangeTableViewCell.swift in Sources */,
+				FBADE14324B33EB0000AC326 /* ExchangeTableViewCell.swift in Sources */,
 				FB92019624A8BDE000B26284 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
