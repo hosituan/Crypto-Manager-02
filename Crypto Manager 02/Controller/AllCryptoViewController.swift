@@ -22,6 +22,7 @@ class AllCryptoViewController: UIViewController {
         super.viewDidLoad()
         bindUI()
         self.tableView.delegate = self
+        dismissKey()
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +49,16 @@ extension AllCryptoViewController: UITableViewDelegate {
             vc.crypto = selectedCrypto
             vc.navigationItem.title = selectedCrypto?.name
         }
+    }
+    func dismissKey()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard()
+    {
+    view.endEditing(true)
     }
 }
 
